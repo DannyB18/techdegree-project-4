@@ -1,0 +1,21 @@
+/* =========================
+    Mixins
+========================= */
+
+// Button colors
+@mixin buttons($map) {
+  @each $button, $color in $map {
+    .#{$button} {
+      background-color: $color;
+    }
+  }
+}
+
+// Column colors
+@mixin columns($map) {
+  @each $column, $color in $map {
+    &.col-#{$column} {
+      background-color: $color;
+    }
+  }
+}
