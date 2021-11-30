@@ -1,0 +1,7 @@
+/* =========================
+    Functions
+========================= */
+
+@function col-basis($column) {
+  @return ($column * 8.333%);
+}

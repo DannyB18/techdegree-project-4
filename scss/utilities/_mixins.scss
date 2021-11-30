@@ -11,11 +11,22 @@
   }
 }
 
-// Column colors
+// Column media queries
+@mixin mq($break) {
+  $break: map-get($breakpoints, $break);
+  @media (min-width: $break) {
+    @content;
+  }
+}
+
+// Columns
 @mixin columns($map) {
   @each $column, $color in $map {
     &.col-#{$column} {
       background-color: $color;
+      @include mq("med") {
+        flex-basis: col-basis($column);
+      }
     }
   }
 }
