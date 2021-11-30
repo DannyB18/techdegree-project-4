@@ -22,3 +22,10 @@
     @include center;
   }
 }
+
+@include mq("med") {
+  .logo {
+    margin-left: initial;
+    margin-right: initial;
+  }
+}

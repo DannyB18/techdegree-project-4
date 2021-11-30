@@ -4,12 +4,19 @@
 
 .container {
   padding: 0 10px;
+  @include mq("med") {
+    max-width: 1400px;
+    @include center;
+  }
 }
 
 .row {
   display: flex;
   flex-direction: column;
   padding: 1em 10px;
+  @include mq("med") {
+    flex-direction: row;
+  }
 }
 
 [class^="col"] {
@@ -18,8 +25,17 @@
   min-height: 25px;
   padding: 10px;
   border-radius: 5px;
+  @include mq("med") {
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    align-items: center;
+  }
   & + [class^="col"] {
     margin-left: 10px;
+    @include mq("med") {
+      margin-left: 10px;
+    }
   }
 }
 
@@ -29,4 +45,13 @@
 
 .card {
   flex-basis: 100%;
+}
+
+.row {
+}
+
+[class^="col"] {
+}
+
+[class^="col"] + [class^="col"] {
 }
