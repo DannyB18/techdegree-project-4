@@ -26,8 +26,7 @@
   padding: 10px;
   border-radius: 5px;
   @include mq("med") {
-    display: flex;
-    justify-content: center;
+    @include flexbox($just: center);
     margin-top: 0;
     align-items: center;
     & + [class^="col"] {
@@ -48,4 +47,10 @@
 
 .card {
   flex-basis: 100%;
+}
+
+@include mq("med") {
+  .centered {
+    @include center;
+  }
 }

@@ -44,9 +44,3 @@ a {
   border-left: 8px solid $color-primary;
   border-radius: 5px;
 }
-
-@include mq("med") {
-  .centered {
-    @include center;
-  }
-}

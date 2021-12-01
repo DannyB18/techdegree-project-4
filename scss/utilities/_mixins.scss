@@ -2,12 +2,36 @@
     Mixins
 ========================= */
 
+// Center images
+@mixin center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Create flex container
+@mixin flexbox($disp: flex, $dir: null, $just: null, $wrap: null) {
+  display: $disp;
+  flex-direction: $dir;
+  justify-content: $just;
+  flex-wrap: $wrap;
+}
+
 // Button colors
 @mixin buttons($map) {
   @each $button, $color in $map {
     .#{$button} {
       background-color: $color;
+      @include hover-color($color);
     }
+  }
+}
+
+// Button hover color
+@mixin hover-color($color) {
+  &:hover {
+    $hover-light: lighten($color, 15%);
+    background-color: $hover-light;
   }
 }
 
@@ -35,11 +59,4 @@
       flex-basis: col-basis($column);
     }
   }
-}
-
-// Center images
-@mixin center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
