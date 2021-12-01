@@ -37,7 +37,13 @@
 }
 
 .theme {
-  @include columns($columns);
+  @include themes($columns);
+}
+
+.col {
+  @include mq("med") {
+    @include columns($columns);
+  }
 }
 
 .card {

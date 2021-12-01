@@ -19,14 +19,20 @@
   }
 }
 
-// Columns
-@mixin columns($map) {
+// Themes
+@mixin themes($map) {
   @each $column, $color in $map {
     &.col-#{$column} {
       background-color: $color;
-      @include mq("med") {
-        flex-basis: col-basis($column);
-      }
+    }
+  }
+}
+
+// Column basis
+@mixin columns($columns) {
+  @each $column, $color in $columns {
+    &-#{$column} {
+      flex-basis: col-basis($column);
     }
   }
 }
