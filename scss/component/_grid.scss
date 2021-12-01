@@ -30,10 +30,7 @@
     justify-content: center;
     margin-top: 0;
     align-items: center;
-  }
-  & + [class^="col"] {
-    margin-left: 10px;
-    @include mq("med") {
+    & + [class^="col"] {
       margin-left: 10px;
     }
   }
@@ -45,13 +42,4 @@
 
 .card {
   flex-basis: 100%;
-}
-
-.row {
-}
-
-[class^="col"] {
-}
-
-[class^="col"] + [class^="col"] {
 }
