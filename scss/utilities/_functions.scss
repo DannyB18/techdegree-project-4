@@ -5,3 +5,43 @@
 @function col-basis($column) {
   @return ($column * 8.333%);
 }
+
+// @function col-basis($column) {
+//   $basis: ($column * 8.333);
+//   $third-place: ($column * 0.003);
+//   $basis-int: ($basis * 1000);
+//   $third-place-int: ($third-place * 1000);
+//   $n: 10;
+//   @if ($third-place-int < $n) {
+//     $difference: ($n - $third-place-int);
+//     @if ($difference < 5) {
+//       $remainder: $difference;
+//       $rounded: ($basis-int + $remainder);
+//       $result: ($rounded / 1000%);
+//       @return $result;
+//     } @else {
+//       $remainder: $third-place-int;
+//       $rounded: ($basis-int - $remainder);
+//       $result: ($rounded / 1000%);
+//       @return $result;
+//     }
+//   } @else {
+//     @while ($third-place-int > $n) {
+//       $n: $n + 10;
+//       @if ($third-place-int < $n) {
+//         $difference: ($n - $third-place-int);
+//         @if ($difference < 5) {
+//           $remainder: $difference;
+//           $rounded: ($basis-int + $remainder);
+//           $result: ($rounded / 1000%);
+//           @return $result;
+//         } @else {
+//           $remainder: (10 - $difference);
+//           $rounded: ($basis-int - $remainder);
+//           $result: ($rounded / 1000%);
+//           @return $result;
+//         }
+//       }
+//     }
+//   }
+// }
